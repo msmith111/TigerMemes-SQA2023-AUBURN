@@ -4,3 +4,4 @@
 
 ### Group members:
 - Mark Smith - mss0060@auburn.edu
+- Jonathan Seibert - jhs0051@auburn.edu
