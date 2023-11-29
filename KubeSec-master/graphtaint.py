@@ -7,6 +7,8 @@ import constants
 import parser 
 import os 
 from itertools import combinations
+import logging
+import logger
 
 def getYAMLFiles(path_to_dir):
     valid_  = [] 
@@ -113,6 +115,9 @@ def getSHFiles(path_to_dir):
            if(os.path.exists(full_p_file)):
              if (full_p_file.endswith( constants.SH_EXTENSION  )  ):
                valid_.append(full_p_file)
+
+    logger = logger.createLogObj("graphtaint Logger")
+    logger.log(msg=f'Got the following SHFiles {valid_}', level=logging.INFO)
     return valid_ 
 
 

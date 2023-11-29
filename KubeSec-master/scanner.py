@@ -12,6 +12,8 @@ import numpy as np
 import json
 from sarif_om import *
 from jschema_to_python.to_json import to_json
+import logging
+import logger
 
 '''Global SarifLog Object definition and Rule definition for SLI-KUBE. Rule IDs are ordered by the sequence as it appears in the TOSEM paper'''
 
@@ -68,6 +70,9 @@ def getYAMLFiles(path_to_dir):
            if(os.path.exists(full_p_file)):
              if (full_p_file.endswith( constants.YML_EXTENSION  )  or full_p_file.endswith( constants.YAML_EXTENSION  )  ):
                valid_.append(full_p_file)
+
+    logger = logger.createLogObj("Scanner Logger")
+    logger.log(msg=f'Loaded the following paths {valid_}', level=logging.INFO)
     return valid_ 
 
 def isValidUserName(uName): 
