@@ -13,6 +13,14 @@ This is a useful tool because it can warn a developer about their latest code ch
 
 ### Part 4b. Fuzzing - Shafqat Rana
 
+Created a fuzz.py file that has a FuzzFunctions method which is called in the main method of the fuzz.py file. The FuzzFunctions method calls five separate methods across two different files using inputs that should throw errors when calling them. The functions that I called with their inputs were: 
+- getYAMLFiles(1)
+- scanForUnconfinedSeccomp('')
+- getItemFromSecret(0, 0)
+- constructHelmString({})
+- mineNetPolGraph(None, None, None, None)
+The errors varied from invalid types, No such file or directory, and not enough values to unpack. To get the Github Actions to be executed automatically, a .yml file was added within the .github/workflows directory that installed needed directories that would allow for the fuzz.py file to be ran. 
+
 ### Part 4c Forensics - Mark Smith
 
 I created a simple logging class with a single function that returns a logger. The logger creates a new file for that day that will contain every log that occurs on that day. The log's themselves provide a timestamp, configurable message, and a log level when used. Added some test code in the file to make sure the logger is working. Added forensics to the following methods in the TestParsing class to test the log as well as provide info:
