@@ -20,7 +20,7 @@ I created a fuzz.py file that has a FuzzFunctions method which is called in the 
 - constructHelmString({})
 - mineNetPolGraph(None, None, None, None)
 
-The errors varied from invalid types, No such file or directory, and not enough values to unpack. To get the Github Actions to be executed automatically, a .yml file was added within the .github/workflows directory that installed needed directories that would allow for the fuzz.py file to be ran. Calling these methods with inputs that would test their boundaries allowed for testing of the code to check for any obvious downsides of the code and made me consider think about how to best implement error handling for these types of situations.
+The errors varied from invalid types, No such file or directory, and not enough values to unpack. To get the Github Actions to be executed automatically, a .yml file was added within the .github/workflows directory that installed needed directories that would allow for the fuzz.py file to be run. Calling these methods with inputs that would test their boundaries allowed for testing of the code to check for any obvious downsides of the code and made me consider how to best implement error handling for these types of situations.
 
 ### Part 4c Forensics - Mark Smith
 
