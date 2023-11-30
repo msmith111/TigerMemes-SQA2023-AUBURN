@@ -19,6 +19,7 @@ Created a fuzz.py file that has a FuzzFunctions method which is called in the ma
 - getItemFromSecret(0, 0)
 - constructHelmString({})
 - mineNetPolGraph(None, None, None, None)
+
 The errors varied from invalid types, No such file or directory, and not enough values to unpack. To get the Github Actions to be executed automatically, a .yml file was added within the .github/workflows directory that installed needed directories that would allow for the fuzz.py file to be ran. 
 
 ### Part 4c Forensics - Mark Smith
