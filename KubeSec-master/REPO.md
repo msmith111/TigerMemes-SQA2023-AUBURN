@@ -23,4 +23,3 @@ I created a simple logging class with a single function that returns a logger. T
 - testKeyCount
 
 While this is only for a few methods of the whole repo, it outlines how the class I made could be used to log information that could be relevant after the fact when analyzing code. In the cases above it is just to log when testing occurs, but the message could be changed to fit any section of the code. This would be useful when going back over the code when a security issue occurred. Working on this example, it made me think about where I should place code that will be used for forensics. Additionally, it made me think about what kind of information I should include in a log. Specifically, what kind of level each log should be, the code's status,  where it occurred etc. I also gained experience working with pythons logging class which I will be able to use for work I might do in the future that involves python.
-
