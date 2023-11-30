@@ -7,6 +7,8 @@ Test Utilities for Parsing
 import unittest 
 import TEST_CONSTANTS 
 import parser
+import logging
+import logger
 
 class TestParsing( unittest.TestCase ):
 
@@ -14,7 +16,9 @@ class TestParsing( unittest.TestCase ):
         oracle_value = 4 
         scriptName   = TEST_CONSTANTS._test_yaml
         dict_as_list = parser.loadMultiYAML( scriptName )
-        yaml_as_dict = parser.getSingleDict4MultiDocs( dict_as_list )        
+        yaml_as_dict = parser.getSingleDict4MultiDocs( dict_as_list )
+        test_logger = logger.createLogObj("Parser Test Logger")
+        test_logger.log(msg="Logged Test testKeyExtraction PASSED in TestParsing", level=logging.INFO)    
         self.assertEqual(oracle_value, len(yaml_as_dict) ,  TEST_CONSTANTS._common_error_string + str(oracle_value)  )   
                     
     def testKeyPathLength(self):     
@@ -23,6 +27,8 @@ class TestParsing( unittest.TestCase ):
         dict_as_list = parser.loadMultiYAML( scriptName )
         yaml_as_dict = parser.getSingleDict4MultiDocs( dict_as_list )        
         key_lis      = parser.keyMiner( yaml_as_dict, TEST_CONSTANTS._value_for_key )
+        test_logger = logger.createLogObj("Parser Test Logger")
+        test_logger.log(msg="Logged Test testKeyPathLength PASSED in TestParsing", level=logging.INFO)    
         self.assertEqual(oracle_value, len(key_lis) ,  TEST_CONSTANTS._common_error_string + str(oracle_value)  )   
 
     def testKeyPath1(self):     
@@ -31,6 +37,8 @@ class TestParsing( unittest.TestCase ):
         dict_as_list = parser.loadMultiYAML( scriptName )
         yaml_as_dict = parser.getSingleDict4MultiDocs( dict_as_list )        
         key_lis      = parser.keyMiner( yaml_as_dict, TEST_CONSTANTS._value_for_key )
+        test_logger = logger.createLogObj("Parser Test Logger")
+        test_logger.log(msg="Logged Test testKeyPath1 PASSED in TestParsing", level=logging.INFO)    
         self.assertEqual(oracle_value, key_lis[0] ,  TEST_CONSTANTS._common_error_string + oracle_value  )   
 
     def testKeyPath2(self):     
@@ -39,6 +47,8 @@ class TestParsing( unittest.TestCase ):
         dict_as_list = parser.loadMultiYAML( scriptName )
         yaml_as_dict = parser.getSingleDict4MultiDocs( dict_as_list )        
         key_lis      = parser.keyMiner( yaml_as_dict, TEST_CONSTANTS._value_for_key )
+        test_logger = logger.createLogObj("Parser Test Logger")
+        test_logger.log(msg="Logged Test testKeyPath2 PASSED in TestParsing", level=logging.INFO)    
         self.assertEqual(oracle_value, key_lis[-2] ,  TEST_CONSTANTS._common_error_string + oracle_value  )         
 
     def testKeyCount(self):     
@@ -48,6 +58,8 @@ class TestParsing( unittest.TestCase ):
         yaml_as_dict = parser.getSingleDict4MultiDocs( dict_as_list )        
         key_lis      = [] 
         parser.getKeyRecursively  ( yaml_as_dict, key_lis )
+        test_logger = logger.createLogObj("Parser Test Logger")
+        test_logger.log(msg="Logged Test testKeyCount PASSED in TestParsing", level=logging.INFO)    
         self.assertEqual(oracle_value, len(key_lis) ,  TEST_CONSTANTS._common_error_string + str(oracle_value)  )                     
 
     def testValueCount(self):     

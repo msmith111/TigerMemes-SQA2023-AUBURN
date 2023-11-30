@@ -140,8 +140,6 @@ class TestFalsePositives( unittest.TestCase ):
         oracle_value = 0
         scriptName   = TEST_CONSTANTS._fp_script1
         within_match_, _, _ , _ = scanner.scanSingleManifest( scriptName )
-        logger = logger.createLogObj("Scanner Test Logger")
-        logger.log(msg="Logged test run", level=logging.INFO)
         self.assertEqual( len(within_match_[0]) + len(within_match_[1]) + len(within_match_[2]), 0,  TEST_CONSTANTS._common_error_string + str(oracle_value)  )  
 
     def testSecret2(self):     

@@ -30,8 +30,6 @@ def checkIfWeirdYAML(yaml_script):
     val = False
     if ( any(x_ in yaml_script for x_ in constants.WEIRD_PATHS  ) ):
         val = True 
-        logger = logger.createLogObj("Parser Logger")
-        logger.log(msg="Logged Weird YAML", level=logging.INFO)
     return val 
 
 
@@ -153,18 +151,12 @@ def checkParseError( path_script ):
         except ruamel.yaml.parser.ParserError as parse_error:
             flag = False
             print(constants.YAML_SKIPPING_TEXT)           
-            logger = logger.createLogObj("Parser Logger")
-            logger.log(msg="Logged Parser Error", level=logging.INFO)
         except ruamel.yaml.error.YAMLError as exc:
             flag = False
             print( constants.YAML_SKIPPING_TEXT  )   
-            logger = logger.createLogObj("Parser Logger")
-            logger.log(msg="Logged YAML error", level=logging.INFO) 
         except UnicodeDecodeError as err_: 
             flag = False
             print( constants.YAML_SKIPPING_TEXT  )
-            logger = logger.createLogObj("Parser Logger")
-            logger.log(msg="Logged Unicode Decode Error", level=logging.INFO)
     return flag
 
 def loadMultiYAML( script_ ):

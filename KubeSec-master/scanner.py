@@ -70,9 +70,6 @@ def getYAMLFiles(path_to_dir):
            if(os.path.exists(full_p_file)):
              if (full_p_file.endswith( constants.YML_EXTENSION  )  or full_p_file.endswith( constants.YAML_EXTENSION  )  ):
                valid_.append(full_p_file)
-
-    logger = logger.createLogObj("Scanner Logger")
-    logger.log(msg=f'Loaded the following paths {valid_}', level=logging.INFO)
     return valid_ 
 
 def isValidUserName(uName): 
