@@ -22,4 +22,4 @@ Created a simple logging class with a single function that returns a logger. Add
 - testKeyPath2
 - testKeyCount
 
-While this only for a few methods of the whole repo, it outlines how the class I made could be used to log information that could be relevant after the fact when analyzing code. The class logs a timestamp as well as a message. In the cases above it is just to log when testing occurs, but the message could be changed to fit the section of code.
+While this only for a few methods of the whole repo, it outlines how the class I made could be used to log information that could be relevant after the fact when analyzing code. The class logs a timestamp as well as a message. In the cases above it is just to log when testing occurs, but the message could be changed to fit the section of code. Additonally, the class allows for logging a certain log type such as info or warning. 
