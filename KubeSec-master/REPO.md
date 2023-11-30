@@ -1,4 +1,4 @@
-part 4a. git hooks -- Jonathan Seibert
+### Part 4a. git hooks - Jonathan Seibert
 
 The task of this assignment was to create Create a Git Hook that will run and report all
 security weaknesses in the project in a CSV file whenever a Python file is changed and committed. By using the
@@ -11,18 +11,15 @@ run the script manually to just get the output file. I learned how to use bash s
 a repo to report security vulnerabilities and tie it into the project to run when commits are made.
 This is a useful tool because it can warn a developer about their latest code changes before merging to master.
 
-part 4b.
+### Part 4b. Fuzzing - Shafqat Rana
 
-part 4c Activities
+### Part 4c Forensics - Mark Smith
 
-Created a simple logging class with a single function that returns a logger. Added some test code in the file to make sure the logger is working.
-Added forensics to the following five functions
-In parser.py added forensics to the following functions
-checkIfWeirdYAML
-checkParseError
-In scanner.py added forensics to the following functions
-getYAMLFiles
-In graphtaint.py added forensics to the following functions
-getSHFiles
-In TEST_SCANNING.py added forensics to the following functions
-testSecret1
+Created a simple logging class with a single function that returns a logger. Added some test code in the file to make sure the logger is working. Added forensics to the following methods in the TestParsing class:
+- testKeyExtraction
+- testKeyPathLength
+- testKeyPath1
+- testKeyPath2
+- testKeyCount
+
+While this only for a few methods of the whole repo, it outlines how the class I made could be used to log information that could be relevant after the fact when analyzing code. The class logs a timestamp as well as a message. In the cases above it is just to log when testing occurs, but the message could be changed to fit the section of code.
